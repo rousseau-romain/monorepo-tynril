@@ -1,4 +1,3 @@
-<div class="r" id="dfg">dfd</div>
 <h1>{monster.name} | {monster.id}</h1>
 
 <div class="selector-rank">
@@ -6,6 +5,7 @@
     <button class={level === l ? 'active' : ''} on:click={() => changeLevel(l)}>{l + 1}</button>
   {/each}
 </div>
+
 <ul>
   <li><span>Level: </span>{monster.level[level]}</li>
   <li><span>Pa: </span>{monster.pa[level]}</li>
