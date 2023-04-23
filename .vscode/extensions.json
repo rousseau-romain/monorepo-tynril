@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "yoavbls.pretty-ts-errors",
+    "zakudriver.nyan-mode",
+    "svelte.svelte-vscode",
+    "fivethree.vscode-svelte-snippets",
+    "dbaeumer.vscode-eslint",
+    "syler.sass-indented",
+    "editorconfig.editorconfig"
+  ]
+}

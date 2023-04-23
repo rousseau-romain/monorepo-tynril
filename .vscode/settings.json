@@ -1,0 +1,18 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.formatOnSave": true
+  },
+  "[sass]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "syler.sass-indented"
+  },
+  "[css]": {
+    "editor.formatOnSave": false
+  }
+}

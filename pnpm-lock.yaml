@@ -10,12 +10,18 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:packages/eslint-config-custom
+      husky:
+        specifier: ^8.0.3
+        version: 8.0.3
       prettier:
         specifier: ^2.7.1
         version: 2.8.7
       prettier-plugin-svelte:
         specifier: ^2.7.0
         version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
+      sass:
+        specifier: ^1.62.0
+        version: 1.62.0
       turbo:
         specifier: latest
         version: 1.9.3
@@ -40,10 +46,10 @@ importers:
         version: 3.58.0
       svelte-check:
         specifier: ^2.7.1
-        version: 2.10.3(svelte@3.58.0)
+        version: 2.10.3(sass@1.62.0)(svelte@3.58.0)
       svelte-preprocess:
         specifier: ^4.10.6
-        version: 4.10.7(svelte@3.58.0)(typescript@4.9.5)
+        version: 4.10.7(sass@1.62.0)(svelte@3.58.0)(typescript@4.9.5)
       tslib:
         specifier: ^2.3.1
         version: 2.5.0
@@ -52,7 +58,7 @@ importers:
         version: 4.9.5
       vite:
         specifier: ^4.0.0
-        version: 4.2.1
+        version: 4.2.1(sass@1.62.0)
 
   apps/web:
     dependencies:
@@ -74,10 +80,10 @@ importers:
         version: 3.58.0
       svelte-check:
         specifier: ^2.7.1
-        version: 2.10.3(svelte@3.58.0)
+        version: 2.10.3(sass@1.62.0)(svelte@3.58.0)
       svelte-preprocess:
         specifier: ^4.10.6
-        version: 4.10.7(svelte@3.58.0)(typescript@4.9.5)
+        version: 4.10.7(sass@1.62.0)(svelte@3.58.0)(typescript@4.9.5)
       tslib:
         specifier: ^2.3.1
         version: 2.5.0
@@ -86,7 +92,7 @@ importers:
         version: 4.9.5
       vite:
         specifier: ^4.0.0
-        version: 4.2.1
+        version: 4.2.1(sass@1.62.0)
 
   packages/eslint-config-custom:
     dependencies:
@@ -102,9 +108,15 @@ importers:
       eslint-config-turbo:
         specifier: latest
         version: 1.9.3(eslint@8.37.0)
+      eslint-plugin-align-assignments:
+        specifier: ^1.1.2
+        version: 1.1.2(eslint@8.37.0)
       eslint-plugin-svelte3:
         specifier: ^4.0.0
         version: 4.0.0(eslint@8.37.0)(svelte@3.58.0)
+      typescript:
+        specifier: ^4.7.2
+        version: 4.9.5
 
   packages/ui:
     devDependencies:
@@ -435,7 +447,7 @@ packages:
       svelte: 3.58.0
       tiny-glob: 0.2.9
       undici: 5.20.0
-      vite: 4.2.1
+      vite: 4.2.1(sass@1.62.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -453,7 +465,7 @@ packages:
       magic-string: 0.30.0
       svelte: 3.58.0
       svelte-hmr: 0.15.1(svelte@3.58.0)
-      vite: 4.2.1
+      vite: 4.2.1(sass@1.62.0)
       vitefu: 0.2.4(vite@4.2.1)
     transitivePeerDependencies:
       - supports-color
@@ -475,7 +487,7 @@ packages:
     resolution: {integrity: sha512-jn7qwGFmJHwUSphV8zZneO3GmtlgLsmhs/LQyVvQbIIa+fzGMUiHI4HXJZL3FT8MJmgXWbLGiVVY7ElvHq6vDA==}
     deprecated: This is a stub types definition. sass provides its own type definitions, so you do not need this installed.
     dependencies:
-      sass: 1.60.0
+      sass: 1.62.0
     dev: true
 
   /@types/semver@7.3.13:
@@ -837,6 +849,14 @@ packages:
       eslint-plugin-turbo: 1.9.3(eslint@8.37.0)
     dev: false
 
+  /eslint-plugin-align-assignments@1.1.2(eslint@8.37.0):
+    resolution: {integrity: sha512-I1ZJgk9EjHfGVU9M2Ex8UkVkkjLL5Y9BS6VNnQHq79eHj2H4/Cgxf36lQSUTLgm2ntB03A2NtF+zg9fyi5vChg==}
+    peerDependencies:
+      eslint: '>=0.8.0'
+    dependencies:
+      eslint: 8.37.0
+    dev: false
+
   /eslint-plugin-svelte3@4.0.0(eslint@8.37.0)(svelte@3.58.0):
     resolution: {integrity: sha512-OIx9lgaNzD02+MDFNLw0GEUbuovNcglg+wnd/UY0fbZmlQSz7GlQiQ1f+yX0XvC07XPcDOnFcichqI3xCwp71g==}
     peerDependencies:
@@ -1091,6 +1111,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: true
+
+  /husky@8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ignore@5.2.4:
@@ -1449,9 +1475,9 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /sass@1.60.0:
-    resolution: {integrity: sha512-updbwW6fNb5gGm8qMXzVO7V4sWf7LMXnMly/JEyfbfERbVH46Fn6q02BX7/eHTdKpE7d+oTkMMQpFWNUMfFbgQ==}
-    engines: {node: '>=12.0.0'}
+  /sass@1.62.0:
+    resolution: {integrity: sha512-Q4USplo4pLYgCi+XlipZCWUQz5pkg/ruSSgJ0WRDSb/+3z9tXUOkQ7QPYn4XrhZKYAK4HlpaQecRwKLJX6+DBg==}
+    engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
@@ -1548,7 +1574,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check@2.10.3(svelte@3.58.0):
+  /svelte-check@2.10.3(sass@1.62.0)(svelte@3.58.0):
     resolution: {integrity: sha512-Nt1aWHTOKFReBpmJ1vPug0aGysqPwJh2seM1OvICfM2oeyaA62mOiy5EvkXhltGfhCcIQcq2LoE0l1CwcWPjlw==}
     hasBin: true
     peerDependencies:
@@ -1561,7 +1587,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.58.0
-      svelte-preprocess: 4.10.7(svelte@3.58.0)(typescript@4.9.5)
+      svelte-preprocess: 4.10.7(sass@1.62.0)(svelte@3.58.0)(typescript@4.9.5)
       typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -1585,7 +1611,7 @@ packages:
       svelte: 3.58.0
     dev: true
 
-  /svelte-preprocess@4.10.7(svelte@3.58.0)(typescript@4.9.5):
+  /svelte-preprocess@4.10.7(sass@1.62.0)(svelte@3.58.0)(typescript@4.9.5):
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -1630,6 +1656,7 @@ packages:
       '@types/sass': 1.45.0
       detect-indent: 6.1.0
       magic-string: 0.25.9
+      sass: 1.62.0
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.58.0
@@ -1767,7 +1794,7 @@ packages:
     dependencies:
       punycode: 2.3.0
 
-  /vite@4.2.1:
+  /vite@4.2.1(sass@1.62.0):
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1796,6 +1823,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.20.2
+      sass: 1.62.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -1808,7 +1836,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.2.1
+      vite: 4.2.1(sass@1.62.0)
     dev: true
 
   /which@2.0.2:

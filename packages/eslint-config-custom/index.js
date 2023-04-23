@@ -1,11 +1,11 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'turbo', 'prettier'],
-  plugins: ['svelte3', '@typescript-eslint'],
+  extends: ['eslint:recommended', 'turbo', 'prettier', 'plugin:@typescript-eslint/recommended'],
+  plugins: ['svelte3', '@typescript-eslint', 'align-assignments'],
   ignorePatterns: ['*.cjs'],
   overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
   settings: {
-    'svelte3/typescript': () => require('typescript')
+    'svelte3/typescript': () => require('typescript'),
   },
   parserOptions: {
     sourceType: 'module',
@@ -14,6 +14,9 @@ module.exports = {
   env: {
     browser: true,
     es2017: true,
-    node: true
+    node: true,
   },
-};
+  rules: {
+    'align-assignments/align-assignments': [2, { requiresOnly: false }],
+  },
+}
