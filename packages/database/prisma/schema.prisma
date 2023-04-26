@@ -23,3 +23,27 @@ enum Role {
   USER
   ADMIN
 }
+
+model Monster {
+  id                 Int      @id @default(autoincrement())
+  createdAt          DateTime @default(now())
+  numberOfLevel      Int
+  name               String
+  level              Int[]
+  life               Int[]
+  pa                 Int[]
+  pm                 Int[]
+  xp                 Int[]
+  init               Int[]
+  strength           Int[]
+  fire               Int[]
+  water              Int[]
+  wind               Int[]
+  dodgeAp            Int[]
+  dodgeMp            Int[]
+  resistanceNeutral  Int[]
+  resistanceStrength Int[]
+  resistanceFire     Int[]
+  resistanceWater    Int[]
+  resistanceWind     Int[]
+}

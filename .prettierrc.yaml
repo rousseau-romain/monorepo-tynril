@@ -1,0 +1,13 @@
+singleQuote: true
+trailingComma: "all"
+printWidth: 100
+semi: false
+endOfLine: "lf"
+svelteBracketSameLine: true
+svelteStrictMode: false
+svelteAllowShorthand: true
+svelteBracketNewLine: true
+svelteSortOrder: "markup-scripts-styles-options"
+bracketSameLine: true
+arrowParens: "avoid"
+htmlWhitespaceSensitivity: "strict"
