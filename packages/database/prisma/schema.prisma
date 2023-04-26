@@ -27,6 +27,7 @@ enum Role {
 model Monster {
   id                 Int      @id @default(autoincrement())
   createdAt          DateTime @default(now())
+  idDofus            Int
   numberOfLevel      Int
   name               String
   level              Int[]
