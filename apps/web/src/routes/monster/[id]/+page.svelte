@@ -1,7 +1,7 @@
 <h1>{monster.name} | {monster.id}</h1>
 
 <div class="selector-rank">
-  {#each monster.numberOfLevel as l}
+  {#each [...Array(monster.numberOfLevel).keys()] as l}
     <button class={level === l ? 'active' : ''} on:click={() => changeLevel(l)}>{l + 1}</button>
   {/each}
 </div>
