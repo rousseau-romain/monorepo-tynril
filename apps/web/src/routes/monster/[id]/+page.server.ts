@@ -1,15 +1,15 @@
 import { error } from '@sveltejs/kit'
 import type { PageServerLoad } from './$types'
 
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from 'database'
 
 export const load = (async ({ params }) => {
   const prisma = new PrismaClient()
   const monster = await prisma.monster.findFirst({
     where: {
-      idDofus: Number(params.id)
-    }
-  })
+      idDofus: Number(params.id),   
+    },
+  })     
 
   if (monster) {
     return { monster }
