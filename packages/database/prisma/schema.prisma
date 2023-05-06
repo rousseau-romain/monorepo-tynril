@@ -14,6 +14,7 @@ datasource db {
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
   email     String   @unique
   name      String?
   role      Role     @default(USER)
@@ -24,12 +25,83 @@ enum Role {
   ADMIN
 }
 
+model Translation {
+  id        Int         @id @unique @default(autoincrement())
+  createdAt DateTime    @default(now())
+  updateAt  DateTime    @updatedAt
+  fr        String
+  es        String?
+  eng       String?
+  pt        String?
+  Name      Monster[]   @relation("Name")
+  NameArchi Monster[]   @relation("NameArchi")
+  Race      Race[]
+  Ecosystem Ecosystem[]
+  Spell     Spell[]
+  SubArea   SubArea[]
+  Loot      Loot[]
+}
+
+model Race {
+  id            Int         @id @unique @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  idDofus       Int
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId Int
+  Monster       Monster[]
+}
+
+model Ecosystem {
+  id            Int         @id @unique @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  idDofus       Int
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId Int
+  Monster       Monster[]
+}
+
+model Spell {
+  id            Int         @id @unique @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  idDofus       Int
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId Int
+  Monster       Monster[]
+}
+
+model SubArea {
+  id            Int         @id @unique @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  idDofus       Int
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId Int
+  Monster       Monster[]
+}
+
+model Loot {
+  id            Int         @id @unique @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  idDofus       Int
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId Int
+  Monster       Monster[]
+}
+
 model Monster {
-  id                 Int      @id @default(autoincrement())
-  createdAt          DateTime @default(now())
+  id                 Int         @id @unique @default(autoincrement())
+  createdAt          DateTime    @default(now())
+  updateAt           DateTime    @updatedAt
   idDofus            Int
+  idArchiDofus       Int
   numberOfLevel      Int
-  name               String
+  name               Translation @relation("Name", fields: [translationNameId], references: [id])
+  nameArchi          Translation @relation("NameArchi", fields: [translationNameArchiId], references: [id])
+  image              String
   level              Int[]
   life               Int[]
   pa                 Int[]
@@ -47,4 +119,17 @@ model Monster {
   resistanceFire     Int[]
   resistanceWater    Int[]
   resistanceWind     Int[]
+  ecosystem          Ecosystem   @relation(fields: [ecosystemId], references: [id])
+  spell              Spell       @relation(fields: [spellId], references: [id])
+  race               Race        @relation(fields: [raceId], references: [id])
+  subArea            SubArea     @relation(fields: [subAreaId], references: [id])
+  loot               Loot        @relation(fields: [lootId], references: [id])
+
+  translationNameId      Int
+  translationNameArchiId Int
+  raceId                 Int
+  subAreaId              Int
+  lootId                 Int
+  spellId                Int
+  ecosystemId            Int
 }

@@ -7,7 +7,6 @@
     "dbaeumer.vscode-eslint",
     "syler.sass-indented",
     "editorconfig.editorconfig",
-    "prisma.prisma-insider",
     "prisma.prisma"
   ]
 }
