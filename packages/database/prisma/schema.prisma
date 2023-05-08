@@ -53,11 +53,11 @@ model Race {
 }
 
 model Ecosystem {
-  id            Int         @id @unique @default(autoincrement())
-  createdAt     DateTime    @default(now())
-  updateAt      DateTime    @updatedAt
-  idDofus       Int         @unique
-  name          Translation @relation(fields: [translationId], references: [id])
+  id            Int          @id @unique @default(autoincrement())
+  createdAt     DateTime     @default(now())
+  updateAt      DateTime     @updatedAt
+  idDofus       Int          @unique
+  name          Translation? @relation(fields: [translationId], references: [id])
   translationId Int
   Monster       Monster[]
 }
