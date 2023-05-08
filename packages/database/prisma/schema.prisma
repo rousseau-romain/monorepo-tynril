@@ -119,11 +119,11 @@ model Monster {
   resistanceFire     Int[]
   resistanceWater    Int[]
   resistanceWind     Int[]
-  ecosystems         Ecosystem   @relation(fields: [ecosystemId], references: [id])
-  spells             Spell       @relation(fields: [spellId], references: [id])
-  races              Race        @relation(fields: [raceId], references: [id])
-  subAreas           SubArea     @relation(fields: [subAreaId], references: [id])
-  loots              Loot        @relation(fields: [lootId], references: [id])
+  ecosystems         Ecosystem[]
+  spells             Spell[]
+  races              Race[]
+  subAreas           SubArea[]
+  loots              Loot[]
 
   translationNameId      Int
   translationNameArchiId Int
