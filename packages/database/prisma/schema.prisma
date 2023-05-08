@@ -43,60 +43,60 @@ model Translation {
 }
 
 model Race {
-  id            Int         @id @unique
+  id            Int         @id @unique @default(autoincrement())
   createdAt     DateTime    @default(now())
   updateAt      DateTime    @updatedAt
-  // idDofus       Int         @unique
+  idDofus       Int
   name          Translation @relation(fields: [translationId], references: [id])
   translationId Int
   Monster       Monster[]
 }
 
 model Ecosystem {
-  id            Int          @id @unique
+  id            Int          @id @unique @default(autoincrement())
   createdAt     DateTime     @default(now())
   updateAt      DateTime     @updatedAt
-  // idDofus       Int         @unique
+  idDofus       Int
   name          Translation? @relation(fields: [translationId], references: [id])
   translationId Int?
   Monster       Monster[]
 }
 
 model Spell {
-  id            Int         @id @unique
+  id            Int         @id @unique @default(autoincrement())
   createdAt     DateTime    @default(now())
   updateAt      DateTime    @updatedAt
-  // idDofus       Int         @unique
+  idDofus       Int
   name          Translation @relation(fields: [translationId], references: [id])
   translationId Int
   Monster       Monster[]
 }
 
 model SubArea {
-  id            Int         @id @unique
+  id            Int         @id @unique @default(autoincrement())
   createdAt     DateTime    @default(now())
   updateAt      DateTime    @updatedAt
-  // idDofus       Int         @unique
+  idDofus       Int
   name          Translation @relation(fields: [translationId], references: [id])
   translationId Int
   Monster       Monster[]
 }
 
 model Loot {
-  id            Int         @id @unique
+  id            Int         @id @unique @default(autoincrement())
   createdAt     DateTime    @default(now())
   updateAt      DateTime    @updatedAt
-  // idDofus       Int         @unique
+  idDofus       Int?
   name          Translation @relation(fields: [translationId], references: [id])
   translationId Int
   Monster       Monster[]
 }
 
 model Monster {
-  id                 Int         @id @unique
+  id                 Int         @id @unique @default(autoincrement())
   createdAt          DateTime    @default(now())
   updateAt           DateTime    @updatedAt
-  // idDofus            Int         @unique
+  idDofus            Int
   idArchiDofus       Int
   numberOfLevel      Int
   name               Translation @relation("Name", fields: [translationNameId], references: [id])
