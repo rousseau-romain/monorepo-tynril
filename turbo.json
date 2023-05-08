@@ -15,6 +15,7 @@
       "cache": false
     },
     "lint": {},
+    "format": {},
     "dev": {
       "cache": false,
       "persistent": true,
