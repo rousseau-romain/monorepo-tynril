@@ -127,9 +127,4 @@ model Monster {
 
   translationNameId      Int
   translationNameArchiId Int
-  raceId                 Int
-  subAreaId              Int
-  lootId                 Int
-  spellId                Int
-  ecosystemId            Int
 }
