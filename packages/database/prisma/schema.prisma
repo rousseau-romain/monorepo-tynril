@@ -58,7 +58,7 @@ model Ecosystem {
   updateAt      DateTime     @updatedAt
   idDofus       Int          @unique
   name          Translation? @relation(fields: [translationId], references: [id])
-  translationId Int
+  translationId Int?
   Monster       Monster[]
 }
 
