@@ -1,6 +1,7 @@
 <nav>
   <slot name="nav" />
   <a href="/">Home</a>
+  <a href="/monsters">Monsters</a>
   <a href="/monster/168">Dopeul crâ</a>
   <a href="/monster/31">Larve Bleue</a>
   <a href="/monster/999">Epouvantail d'Incarnam</a>
