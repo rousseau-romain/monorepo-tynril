@@ -1,12 +1,11 @@
 <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/monster/168">Dopeul crâ</a></li>
-    <li><a href="/monster/31">Larve Bleue</a></li>
-    <li><a href="/monster/999">Epouvantail d'Incarnam</a></li>
-    <li><a href="/monster/253">Abraknyde Sombre</a></li>
-    <li><a href="/monster/123">Cochon de Lait</a></li>
-  </ul>
+  <slot name="nav" />
+  <a href="/">Home</a>
+  <a href="/monster/168">Dopeul crâ</a>
+  <a href="/monster/31">Larve Bleue</a>
+  <a href="/monster/999">Epouvantail d'Incarnam</a>
+  <a href="/monster/253">Abraknyde Sombre</a>
+  <a href="/monster/123">Cochon de Lait</a>
 </nav>
 <main>
   <slot />
@@ -18,16 +17,26 @@
 </footer>
 
 <style lang="sass">
-  nav ul
+  nav,footer
     display: flex
     justify-content: center
     gap: 1em
-    border-bottom: 2px solid black
+    a
+      font-size: 1.1em
+      padding: 1em 1.25em
+      text-transform: capitalize
+      text-decoration: none
+      &, &:active, &:visited
+        background-color: white
+        color: black
+      &:hover
+        background-color: black
+        color: white
+
+  nav
     overflow: hidden
     background-color: white
-
-  li
-    display: flex
+    border-bottom: 2px solid black
     a
       font-size: 1.2em
       text-transform: capitalize
@@ -41,21 +50,8 @@
       &:hover
         background-color: black
         color: white
-
+  
   footer
-    display: flex
-    justify-content: center
-    gap: 1em
     border-top: 2px solid black
-    a
-      font-size: 1.1em
-      padding: 1em 1.25em
-      text-transform: capitalize
-      text-decoration: none
-      &, &:active, &:visited
-        background-color: white
-        color: black
-      &:hover
-        background-color: black
-        color: white
+
 </style>

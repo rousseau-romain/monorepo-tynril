@@ -1,10 +1,12 @@
-<h1>{monster.name} | {monster.id}</h1>
+<h1>{monster.name.fr}{` - ${monster.nameArchi?.fr}` || ''} | {monster.id}</h1>
 
 <div class="selector-rank">
   {#each [...Array(monster.numberOfLevel).keys()] as l}
     <button class={level === l ? 'active' : ''} on:click={() => changeLevel(l)}>{l + 1}</button>
   {/each}
 </div>
+
+<img src="/images/monsters/{monster.image}" alt={monster.name.fr} />
 
 <ul>
   <li><span>Level: </span>{monster.level[level]}</li>
@@ -37,6 +39,8 @@
 </script>
 
 <style lang="sass">
+  img
+    height: 200px
   h1 
     text-align: center
   .selector-rank 
