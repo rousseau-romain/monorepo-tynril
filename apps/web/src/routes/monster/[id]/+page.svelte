@@ -1,4 +1,10 @@
-<h1>{monster.name.fr}{` - ${monster.nameArchi?.fr}` || ''} | {monster.id}</h1>
+<h1>
+  {monster.name.fr}
+  {#if monster.nameArchi?.fr}
+    {` - ${monster.nameArchi?.fr}`}
+  {/if}
+  | {monster.id}
+</h1>
 
 <div class="selector-rank">
   {#each [...Array(monster.numberOfLevel).keys()] as l}
@@ -29,9 +35,8 @@
 </ul>
 
 <script lang="ts">
-  import type { PageData } from './$types'
-  export let data: PageData
-  export let level: number = 0
+  export let data
+  export let level = 0
 
   $: monster = data.monster
 
