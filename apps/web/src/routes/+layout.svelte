@@ -2,11 +2,9 @@
   <slot name="nav" />
   <a href="/">Home</a>
   <a href="/monsters">Monsters</a>
-  <a href="/monster/168">Dopeul crâ</a>
-  <a href="/monster/31">Larve Bleue</a>
-  <a href="/monster/999">Epouvantail d'Incarnam</a>
-  <a href="/monster/253">Abraknyde Sombre</a>
-  <a href="/monster/123">Cochon de Lait</a>
+  <a href="/spells">Spells</a>
+  <a href="/monster/45">Chaton</a>
+  <a href="/monster/211">Kaniboul Archer</a>
 </nav>
 <main>
   <slot />
