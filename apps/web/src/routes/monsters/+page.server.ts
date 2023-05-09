@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit'
 
-import { PrismaClient } from "@prisma/client";
+import PrismaClient from 'database';
+
 
 export const load = (async () => {
-  const prisma = new PrismaClient()
+  const prisma = PrismaClient.getPrisma()
   
   const monsters = await prisma.monster.findMany({
     include: {
@@ -11,7 +12,7 @@ export const load = (async () => {
       nameArchi: true,
     }
   })
-  prisma.$disconnect()   
+  await prisma.$disconnect()   
 
   if (monsters) {
     return { monsters }
