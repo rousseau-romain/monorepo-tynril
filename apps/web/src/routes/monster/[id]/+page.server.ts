@@ -12,6 +12,9 @@ export const load = (async ({ params }) => {
     include: {
       name: true,
       nameArchi: true,
+      spells: {include: {name: true}},
+      subAreas: {include: {name: true}},
+      loots: {include: {name: true}},
     }
   })
   await prisma.$disconnect()   
