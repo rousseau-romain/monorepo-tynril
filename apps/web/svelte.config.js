@@ -10,6 +10,12 @@ const config = {
   kit: {
     adapter: adapter(),
   },
+  vitePlugin: {
+    inspector: {
+      toggleKeyCombo: 'meta-shift',
+      showToggleButton: 'always',
+    },
+  },
 }
 
 export default config

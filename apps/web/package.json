@@ -12,10 +12,11 @@
     "format": "prettier --write --ignore-path=../../.prettierignore . && eslint \"src\" --fix"
   },
   "dependencies": {
-    "ui": "workspace:*",
-    "database": "workspace:*"
+    "database": "workspace:*",
+    "ui": "workspace:*"
   },
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.2.0",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "eslint-config-custom": "workspace:*",
