@@ -30,6 +30,7 @@
       font-size: 1.2em
       display: flex
       margin: 5px 10px
+      align-items: center
       &::before
         margin-right: 10px
         display: inline-block

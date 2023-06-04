@@ -13,7 +13,6 @@
     "husky": "^8.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "sass": "^1.62.0",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0"

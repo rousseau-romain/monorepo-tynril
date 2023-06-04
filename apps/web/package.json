@@ -16,9 +16,10 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.2.0",
+    "sass": "^1.62.1",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
+    "@sveltejs/vite-plugin-svelte": "^2.2.0",
     "eslint-config-custom": "workspace:*",
     "svelte": "^3.44.0",
     "svelte-check": "^2.7.1",

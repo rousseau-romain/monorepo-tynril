@@ -22,8 +22,8 @@
     padding: 10px
 
   .grid-item 
-    width: calc( 25vw - 10px - 10px)
-    height: calc( 33.33333vh - 10px - 10px - 60px)
+    width: calc( 25vw - 10px - 10px )
+    height: calc( 33.33333vh - 10px - 10px - 60px )
     padding: 5px
     font-size: 30px
     text-align: center
